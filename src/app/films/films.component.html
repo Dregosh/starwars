@@ -1,0 +1,31 @@
+<div>
+  <label for="sorter">Sort by: </label>
+  <select #sorter name="sorter" id="sorter" (change)="sortBy(sorter.value)">
+    <option value="release_date">release date</option>
+    <option value="title">title</option>
+    <option value="director">director</option>
+    <option value="episode_id">episode ID</option>
+  </select>
+</div>
+<div id="all-films-table">
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th (click)="sortBy('title')">Title</th>
+      <th (click)="sortBy('director')">Director</th>
+      <th (click)="sortBy('release_date')">Release date</th>
+      <th (click)="sortBy('episode_id')">Ep. ID</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tr *ngFor="let film of allMovies; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{film.title}}</td>
+      <td>{{film.director}}</td>
+      <td>{{film.release_date}}</td>
+      <td>{{film.episode_id}}</td>
+      <td>details</td>
+    </tr>
+  </table>
+</div>
