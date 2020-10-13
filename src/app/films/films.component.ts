@@ -9,21 +9,28 @@ import {FilmService} from '../service/film.service';
 })
 export class FilmsComponent implements OnInit {
   allMovies: Array<Film> = [];
+  selectedSorting: string = 'release_date';
+
+  sortingOptions = [
+    {property: 'title', name: 'Title'},
+    {property: 'director', name: 'Director'},
+    {property: 'release_date', name: 'Release date'},
+    {property: 'episode_id', name: 'Ep. ID'}
+  ];
 
   constructor(private filmService: FilmService) {
   }
 
   ngOnInit(): void {
-    for (let id = 1; id <= 6; id++) {
-      this.filmService.getFilm(id).subscribe(response => {
-        this.allMovies.push(response);
-        this.sortBy('release_date');
-      });
-    }
+    this.filmService.getAllFilms().subscribe(response => {
+      this.allMovies = response.results;
+    });
   }
 
   sortBy(type: string): void {
-    if (type === 'episode_id') {
+    if (this.selectedSorting === type) {
+      this.allMovies.reverse();
+    } else if (type === 'episode_id') {
       this.allMovies.sort((f1: Film, f2: Film) => {
         return f1[type] - f2[type];
       });
@@ -32,5 +39,6 @@ export class FilmsComponent implements OnInit {
         return f1[type].localeCompare(f2[type]);
       });
     }
+    this.selectedSorting = type;
   }
 }

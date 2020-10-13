@@ -14,11 +14,11 @@ th {
   border: 2px solid black;
   background-color: #1476c6;
   color: white;
-  cursor: pointer;
 }
 
-th:hover {
+th.hoverable:hover {
   background-color: powderblue;
+  cursor: pointer;
 }
 
 td {

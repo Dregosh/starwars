@@ -1,21 +1,10 @@
-<div>
-  <label for="sorter">Sort by: </label>
-  <select #sorter name="sorter" id="sorter" (change)="sortBy(sorter.value)">
-    <option value="release_date">release date</option>
-    <option value="title">title</option>
-    <option value="director">director</option>
-    <option value="episode_id">episode ID</option>
-  </select>
-</div>
 <div id="all-films-table">
   <table>
     <thead>
     <tr>
       <th>#</th>
-      <th (click)="sortBy('title')">Title</th>
-      <th (click)="sortBy('director')">Director</th>
-      <th (click)="sortBy('release_date')">Release date</th>
-      <th (click)="sortBy('episode_id')">Ep. ID</th>
+      <th *ngFor="let option of sortingOptions" class="hoverable"
+          (click)="sortBy(option.property)">{{option.name}}</th>
       <th></th>
     </tr>
     </thead>
@@ -28,4 +17,12 @@
       <td>details</td>
     </tr>
   </table>
+  <br>
+  <div>
+    <label for="sorter">Sort by: </label>
+    <select #sorter name="sorter" id="sorter" (change)="sortBy(sorter.value)">
+      <option *ngFor="let option of sortingOptions" [value]="option.property"
+              [selected]="selectedSorting == option.property">{{option.name}}</option>
+    </select>
+  </div>
 </div>
