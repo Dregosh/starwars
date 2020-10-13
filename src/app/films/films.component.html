@@ -8,13 +8,13 @@
       <th></th>
     </tr>
     </thead>
-    <tr *ngFor="let film of allMovies; let i = index">
+    <tr *ngFor="let film of allFilms; let i = index">
       <td>{{i + 1}}</td>
       <td>{{film.title}}</td>
       <td>{{film.director}}</td>
       <td>{{film.release_date}}</td>
       <td>{{film.episode_id}}</td>
-      <td>details</td>
+      <td><a routerLink="details" [state]="{data: film.url}">details</a></td>
     </tr>
   </table>
   <br>

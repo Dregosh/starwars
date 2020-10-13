@@ -8,7 +8,7 @@ import {FilmService} from '../service/film.service';
   styleUrls: ['./films.component.css']
 })
 export class FilmsComponent implements OnInit {
-  allMovies: Array<Film> = [];
+  allFilms: Array<Film> = [];
   selectedSorting: string = 'release_date';
 
   sortingOptions = [
@@ -23,19 +23,19 @@ export class FilmsComponent implements OnInit {
 
   ngOnInit(): void {
     this.filmService.getAllFilms().subscribe(response => {
-      this.allMovies = response.results;
+      this.allFilms = response.results;
     });
   }
 
   sortBy(type: string): void {
     if (this.selectedSorting === type) {
-      this.allMovies.reverse();
+      this.allFilms.reverse();
     } else if (type === 'episode_id') {
-      this.allMovies.sort((f1: Film, f2: Film) => {
+      this.allFilms.sort((f1: Film, f2: Film) => {
         return f1[type] - f2[type];
       });
     } else {
-      this.allMovies.sort((f1: Film, f2: Film) => {
+      this.allFilms.sort((f1: Film, f2: Film) => {
         return f1[type].localeCompare(f2[type]);
       });
     }

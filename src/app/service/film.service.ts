@@ -18,8 +18,7 @@ export class FilmService {
     return this.http.get<ApiResponse<Film>>(allFilmsUrl);
   }
 
-  getFilm(id: number): Observable<Film> {
-    const filmUrl = this.swApiUrl + '/films/' + `${id}/`;
+  getFilm(filmUrl: string): Observable<Film> {
     return this.http.get<Film>(filmUrl);
   }
 }
