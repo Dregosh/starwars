@@ -28,12 +28,13 @@
     <div *ngIf="showCharsTable">
       <table id="characters-info">
         <tr *ngFor="let character of charactersTable; let i = index">
-          <td (click)="getCharacter(i)" [class.clicked]="character.name">
-            {{character.characterLink}}
-          </td>
+          <td (click)="getCharacter(i)"
+              [class.clicked]="character.name">{{character.characterLink}}</td>
           <td>
             <div *ngIf="character.name !== null">{{character.name}}</div>
           </td>
+          <td><a *ngIf="character.name" routerLink="/characters/details"
+                 [state]="{data: character.characterLink}">details</a></td>
         </tr>
       </table>
     </div>

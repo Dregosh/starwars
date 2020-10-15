@@ -26,6 +26,8 @@
         <tr *ngFor="let film of filmsTable; let i = index">
           <td (click)="getFilm(i)" [class.clicked]="film.title">{{film.filmLink}}</td>
           <td><div *ngIf="film.title !== null">{{film.title}}</div></td>
+          <td><a *ngIf="film.title" routerLink="/films/details"
+                 [state]="{data: film.filmLink}">details</a></td>
         </tr>
       </table>
     </div>
