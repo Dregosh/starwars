@@ -4,36 +4,39 @@
 }
 
 table {
+  margin-top: 20px;
   padding: 15px;
   border-collapse: collapse;
-  background-color: white;
+  background-color: #32383E;
 }
 
 th {
   padding: 5px 15px;
-  border: 2px solid black;
-  background-color: #1476c6;
-  color: white;
+  border: 2px solid #272B30;
+  color: #FFE300;
 }
 
 th.hoverable:hover {
-  background-color: powderblue;
+  background-color: #757272;
   cursor: pointer;
 }
 
 td {
   padding: 5px 15px;
-  border: 1px solid grey;
+  border: 1px solid #272B30;
+  color: #C8C8C8;
 }
 
 td:first-child, td:nth-last-child(2) {
   text-align: center;
 }
 
-tr:nth-child(odd) {
-  background-color: lightblue;
-}
-
-tr:hover {
-  background-color: #68f5f0;
+select {
+  padding: 5px;
+  background-color: #32383E;
+  border-color: #272B30;
+  color: #FFE300;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
 }

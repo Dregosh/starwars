@@ -8,17 +8,17 @@ import {ApiResponse} from '../model/ApiResponse';
   providedIn: 'root'
 })
 export class FilmService {
-  swApiUrl = 'https://swapi.dev/api';
+  swApiRootUrl = 'https://swapi.dev/api/';
 
   constructor(private http: HttpClient) {
   }
 
   getAllFilms(): Observable<ApiResponse<Film>> {
-    const allFilmsUrl = this.swApiUrl + '/films/';
+    const allFilmsUrl = this.swApiRootUrl + 'films/';
     return this.http.get<ApiResponse<Film>>(allFilmsUrl);
   }
 
   getFilm(filmUrl: string): Observable<Film> {
-    return this.http.get<Film>(filmUrl);
+    return this.http.get<Film>(this.swApiRootUrl + filmUrl);
   }
 }

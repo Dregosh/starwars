@@ -1,8 +1,16 @@
-table {
-  margin-left: 10px;
+div.main-container {
+  padding-left: 40px;
 }
 
-tr td:first-child {
+h2 {
+  color: #FFE300;
+}
+
+table {
+  margin-left: 20px;
+}
+
+table#movie-info tr td:first-child {
   font-weight: bold;
 }
 
@@ -10,4 +18,28 @@ td {
   vertical-align: top;
   padding-right: 15px;
   padding-bottom: 5px;
+}
+
+table#characters-info tr td:first-child:not(.clicked):hover {
+  background-color: #1b1b1f;
+  cursor: pointer;
+}
+
+td.clicked {
+  text-decoration: line-through;
+  color: grey;
+}
+
+button {
+  background-color: #32383E;
+  border-color: #272B30;
+  color: #FFE300;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  margin-right: 10px;
 }
