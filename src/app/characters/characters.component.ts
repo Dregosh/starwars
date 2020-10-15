@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Character} from '../../model/character';
-import {CharacterService} from '../../service/character.service';
+import {Character} from '../model/character';
+import {CharacterService} from '../service/character.service';
 
 @Component({
   selector: 'app-characters',
@@ -8,9 +8,10 @@ import {CharacterService} from '../../service/character.service';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
+  currentPageNo: number = 1;
   allItems: Array<Character> = [];
-  nextPageUrl: string = null;
   prevPageUrl: string = null;
+  nextPageUrl: string = null;
   selectedSorting: string = 'name';
 
   sortingOptions = [
@@ -22,11 +23,7 @@ export class CharactersComponent implements OnInit {
   constructor(private charService: CharacterService) { }
 
   ngOnInit(): void {
-    this.charService.getTenCharsBatch(1).subscribe(response => {
-      this.allItems = response.results;
-      this.prevPageUrl = response.previous;
-      this.nextPageUrl = response.next;
-    });
+    this.getTenCharsBatch(this.currentPageNo.toString());
   }
 
   sortBy(type: string): void {
@@ -38,5 +35,14 @@ export class CharactersComponent implements OnInit {
       });
     }
     this.selectedSorting = type;
+  }
+
+  getTenCharsBatch(pageUrl: string): void {
+    this.currentPageNo = +pageUrl.slice(pageUrl.length - 1);
+    this.charService.getTenCharsBatch(this.currentPageNo).subscribe(response => {
+      this.allItems = response.results;
+      this.prevPageUrl = response.previous;
+      this.nextPageUrl = response.next;
+    });
   }
 }

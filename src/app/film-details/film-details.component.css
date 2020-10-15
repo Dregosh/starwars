@@ -29,17 +29,3 @@ td.clicked {
   text-decoration: line-through;
   color: grey;
 }
-
-button {
-  background-color: #32383E;
-  border-color: #272B30;
-  color: #FFE300;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  cursor: pointer;
-  outline: none;
-  margin-right: 10px;
-}

@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {FilmsComponent} from './films/films.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FilmDetailsComponent} from './film-details/film-details.component';
-import { CharactersComponent } from './characters/characters/characters.component';
+import { CharactersComponent } from './characters/characters.component';
 
 @NgModule({
   declarations: [

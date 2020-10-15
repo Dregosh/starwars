@@ -16,7 +16,12 @@ th {
   color: #FFE300;
 }
 
-th.hoverable:hover {
+a {
+  display: block;
+  padding: 5px 15px;
+}
+
+th.hoverable:hover, a:hover {
   background-color: #757272;
   cursor: pointer;
 }
@@ -25,6 +30,10 @@ td {
   padding: 5px 15px;
   border: 1px solid #272B30;
   color: #C8C8C8;
+}
+
+td:last-child {
+  padding: 0;
 }
 
 td:first-child, td:nth-last-child(2) {

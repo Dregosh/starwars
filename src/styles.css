@@ -11,3 +11,25 @@ a {
   cursor: pointer;
   color: #aca01c;
 }
+
+button {
+  background-color: #32383E;
+  border-color: #272B30;
+  color: #FFE300;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  outline: none;
+  margin-left: 10px;
+}
+
+button:not([disabled]):hover {
+  background-color: #757272;
+  cursor: pointer;
+}
+
+button[disabled] {
+  color: #757272;
+}
