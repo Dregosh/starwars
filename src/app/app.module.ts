@@ -7,13 +7,15 @@ import {FilmsComponent} from './films/films.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FilmDetailsComponent} from './film-details/film-details.component';
 import { CharactersComponent } from './characters/characters.component';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmsComponent,
     FilmDetailsComponent,
-    CharactersComponent
+    CharactersComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     BrowserModule,

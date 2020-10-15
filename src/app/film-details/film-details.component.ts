@@ -24,7 +24,6 @@ export class FilmDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const selectedMovieUrl = history.state.data;
-    // const selectedMovieUrl = 'http://swapi.dev/api/films/6/';
     this.filmService.getFilm(selectedMovieUrl.slice(this.individualUrlSubstringIndex))
       .subscribe(result => {
       this.film = result;
@@ -45,8 +44,7 @@ export class FilmDetailsComponent implements OnInit {
     if (this.charactersTable[tableIndex].name == null) {
       const charLink = this.charactersTable[tableIndex].characterLink
         .slice(this.individualUrlSubstringIndex);
-      this.characterService.getCharacter(charLink)
-        .subscribe(response => {
+      this.characterService.getCharacter(charLink).subscribe(response => {
           this.charactersTable[tableIndex].name = response.name;
         });
     }

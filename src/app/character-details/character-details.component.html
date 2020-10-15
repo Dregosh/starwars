@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div *ngIf="character">
+    <h2>Selected character's details:</h2>
+    <table id="char-info">
+      <tr>
+        <td>Name:</td>
+        <td>{{character.name}}</td>
+      </tr>
+      <tr>
+        <td>Birth year:</td>
+        <td>{{character.birth_year}}</td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td>{{character.gender}}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <br>
+    <button (click)="toggleFilms()">{{filmsButtonLabel}}</button>
+    <button (click)="goBack()">Go back</button>
+    <br><br>
+    <div *ngIf="showFilmsTable">
+      <table id="films-info">
+        <tr *ngFor="let film of filmsTable; let i = index">
+          <td (click)="getFilm(i)" [class.clicked]="film.title">{{film.filmLink}}</td>
+          <td><div *ngIf="film.title !== null">{{film.title}}</div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
