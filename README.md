@@ -6,3 +6,6 @@ Prosty interfejs użytkownika przeznaczony do konsumowania publicznego serwisu R
 Stack technologiczny: Angular.
 
 Okres realizacji projektu: październik 2020.
+
+Wersja demo online dostępna jest pod adresem: 
+https://dregosh.github.io/starwars/films
