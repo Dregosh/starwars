@@ -1,66 +1,66 @@
 #main-container {
-  display: grid;
-  justify-content: center;
+    display: grid;
+    justify-content: center;
 }
 
 table {
-  padding: 15px;
-  border-collapse: collapse;
+    padding: 15px;
+    border-collapse: collapse;
 }
 
 th {
-  padding: 5px 15px;
-  border: 2px solid #272B30;
-  color: #FFE300;
-  background-color: #32383E;
+    padding: 5px 15px;
+    border: 2px solid #272B30;
+    color: #FFE300;
+    background-color: #32383E;
 }
 
 a {
-  display: block;
-  padding: 5px 15px;
+    display: block;
+    padding: 5px 15px;
 }
 
 th.hoverable:hover, a:hover {
-  background-color: #757272;
-  cursor: pointer;
+    background-color: #757272;
+    cursor: pointer;
 }
 
 td {
-  padding: 5px 15px;
-  border: 1px solid #272B30;
-  color: #C8C8C8;
-  background-color: #32383E;
+    padding: 5px 15px;
+    border: 1px solid #272B30;
+    color: #C8C8C8;
+    background-color: #32383E;
 }
 
 td:last-child {
-  padding: 0;
+    padding: 0;
 }
 
 td:nth-child(2) {
-  width: 180px;
+    width: 180px;
 }
 
 td:nth-last-child(2) {
-  width: 150px;
+    width: 150px;
 }
 
 td:first-child, td:nth-last-child(2) {
-  text-align: center;
+    text-align: center;
 }
 
 .controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
 select {
-  padding: 5px;
-  background-color: #32383E;
-  border-color: #272B30;
-  color: #FFE300;
-  font-size: 1rem;
-  cursor: pointer;
-  outline: none;
+    padding: 5px;
+    background-color: #32383E;
+    border-color: #272B30;
+    color: #FFE300;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
 }

@@ -1,28 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {Film} from '../model/film';
-import {FilmService} from '../service/film.service';
+import { Component, OnInit } from '@angular/core';
+import { Film } from '../model/film';
+import { FilmService } from '../service/film.service';
 
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
-  styleUrls: ['./films.component.css']
+  styleUrls: ['./films.component.css'],
 })
 export class FilmsComponent implements OnInit {
   allItems: Array<Film> = [];
   selectedSorting: string = 'release_date';
 
   sortingOptions = [
-    {property: 'title', name: 'Title'},
-    {property: 'director', name: 'Director'},
-    {property: 'release_date', name: 'Release date'},
-    {property: 'episode_id', name: 'Ep. ID'}
+    { property: 'title', name: 'Title' },
+    { property: 'director', name: 'Director' },
+    { property: 'release_date', name: 'Release date' },
+    { property: 'episode_id', name: 'Ep. ID' },
   ];
 
-  constructor(private filmService: FilmService) {
-  }
+  constructor(private filmService: FilmService) {}
 
   ngOnInit(): void {
-    this.filmService.getAllFilms().subscribe(response => {
+    this.filmService.getAllFilms().subscribe((response) => {
       this.allItems = response.results;
     });
   }

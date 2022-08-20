@@ -1,36 +1,36 @@
 <div id="main-container">
-  <div>
-    <table>
-      <thead>
-      <tr>
-        <th>#</th>
-        <th *ngFor="let option of sortingOptions" class="hoverable"
-            (click)="sortBy(option.property)">{{option.name}}</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tr *ngFor="let item of allItems; let i = index">
-        <td>{{(currentPageNo - 1) * 10 + (i + 1)}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.birth_year}}</td>
-        <td>{{item.gender}}</td>
-        <td><a routerLink="details" [state]="{data: item.url}">details</a></td>
-      </tr>
-    </table>
-  </div>
-  <div class="controls">
     <div>
-      <label for="sorter">Sort by: </label>
-      <select #sorter name="sorter" id="sorter" (change)="sortBy(sorter.value)">
-        <option *ngFor="let option of sortingOptions" [value]="option.property"
-                [selected]="selectedSorting == option.property">{{option.name}}</option>
-      </select>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th (click)="sortBy(option.property)" *ngFor="let option of sortingOptions"
+                    class="hoverable">{{option.name}}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tr *ngFor="let item of allItems; let i = index">
+                <td>{{(currentPageNo - 1) * 10 + (i + 1)}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.birth_year}}</td>
+                <td>{{item.gender}}</td>
+                <td><a [state]="{data: item.url}" routerLink="details">details</a></td>
+            </tr>
+        </table>
     </div>
-    <div>
-      <button (click)="getTenCharsBatch(prevPageUrl)" [disabled]="!prevPageUrl">prev
-      </button>
-      <button (click)="getTenCharsBatch(nextPageUrl)" [disabled]="!nextPageUrl">next
-      </button>
+    <div class="controls">
+        <div>
+            <label for="sorter">Sort by: </label>
+            <select #sorter (change)="sortBy(sorter.value)" id="sorter" name="sorter">
+                <option *ngFor="let option of sortingOptions" [selected]="selectedSorting == option.property"
+                        [value]="option.property">{{option.name}}</option>
+            </select>
+        </div>
+        <div>
+            <button (click)="getTenCharsBatch(prevPageUrl)" [disabled]="!prevPageUrl">prev
+            </button>
+            <button (click)="getTenCharsBatch(nextPageUrl)" [disabled]="!nextPageUrl">next
+            </button>
+        </div>
     </div>
-  </div>
 </div>

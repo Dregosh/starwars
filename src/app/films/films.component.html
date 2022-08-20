@@ -1,28 +1,28 @@
 <div id="all-films-table">
-  <table>
-    <thead>
-    <tr>
-      <th>#</th>
-      <th *ngFor="let option of sortingOptions" class="hoverable"
-          (click)="sortBy(option.property)">{{option.name}}</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tr *ngFor="let item of allItems; let i = index">
-      <td>{{i + 1}}</td>
-      <td>{{item.title}}</td>
-      <td>{{item.director}}</td>
-      <td>{{item.release_date}}</td>
-      <td>{{item.episode_id}}</td>
-      <td><a routerLink="details" [state]="{data: item.url}">details</a></td>
-    </tr>
-  </table>
-  <br>
-  <div>
-    <label for="sorter">Sort by: </label>
-    <select #sorter name="sorter" id="sorter" (change)="sortBy(sorter.value)">
-      <option *ngFor="let option of sortingOptions" [value]="option.property"
-              [selected]="selectedSorting == option.property">{{option.name}}</option>
-    </select>
-  </div>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th (click)="sortBy(option.property)" *ngFor="let option of sortingOptions"
+                class="hoverable">{{option.name}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tr *ngFor="let item of allItems; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.director}}</td>
+            <td>{{item.release_date}}</td>
+            <td>{{item.episode_id}}</td>
+            <td><a [state]="{data: item.url}" routerLink="details">details</a></td>
+        </tr>
+    </table>
+    <br>
+    <div>
+        <label for="sorter">Sort by: </label>
+        <select #sorter (change)="sortBy(sorter.value)" id="sorter" name="sorter">
+            <option *ngFor="let option of sortingOptions" [selected]="selectedSorting == option.property"
+                    [value]="option.property">{{option.name}}</option>
+        </select>
+    </div>
 </div>

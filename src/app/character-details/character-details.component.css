@@ -1,31 +1,31 @@
 div.main-container {
-  padding-left: 40px;
+    padding-left: 40px;
 }
 
 h2 {
-  color: #FFE300;
+    color: #FFE300;
 }
 
 table {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 table#char-info tr td:first-child {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 td {
-  vertical-align: top;
-  padding-right: 15px;
-  padding-bottom: 5px;
+    vertical-align: top;
+    padding-right: 15px;
+    padding-bottom: 5px;
 }
 
 table#films-info tr td:first-child:not(.clicked):hover {
-  background-color: #1b1b1f;
-  cursor: pointer;
+    background-color: #1b1b1f;
+    cursor: pointer;
 }
 
 td.clicked {
-  text-decoration: line-through;
-  color: grey;
+    text-decoration: line-through;
+    color: grey;
 }
